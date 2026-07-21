@@ -1,0 +1,23 @@
+/* ============================================================
+   STYLE.CSS — Huvudfil
+   ============================================================
+
+   1. variables.css  — CSS-variabler & temainställningar
+   2. base.css       — Reset, typografi, layout, utilities, animationer
+   3. header.css     — Header, navigering, knappar & footer
+   4. hero.css       — Hero-sektion, badge, socials & profilbild
+   5. about.css      — Om mig & kompetenser
+   6. projects.css   — Projektkort, bilder & badges
+   7. contact.css    — Erfarenhet, kontaktformulär & aside
+   8. responsive.css — Mediafrågor & dark mode-fixes
+
+   ============================================================ */
+
+@import url("variables.css");
+@import url("base.css");
+@import url("header.css");
+@import url("hero.css");
+@import url("about.css");
+@import url("projects.css");
+@import url("contact.css");
+@import url("responsive.css");

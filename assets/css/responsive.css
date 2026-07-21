@@ -1,0 +1,222 @@
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+  .hero-left {
+    justify-content: flex-start;
+    padding-top: calc(64px + 2rem);
+  }
+  .hero-right {
+    order: -1;
+    height: 60vw;
+    max-height: 380px;
+    min-height: unset;
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-toggle {
+    display: flex;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+  .exp-cols {
+    grid-template-columns: 1fr;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .projects-grid .project-card:first-child {
+    flex-direction: column;
+  }
+  .projects-grid .project-card:first-child .project-img {
+    width: 100%;
+    min-height: 200px;
+  }
+  .scroll-hint {
+    display: none;
+  }
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 900px) {
+  .hero-right {
+    order: -1;
+    height: 60vw;
+    max-height: 380px;
+    min-height: unset;
+  }
+  .hero-img-wrap img {
+    object-position: center 75%;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-primary,
+  .btn-ghost {
+    width: 100%;
+    justify-content: center;
+  }
+  .site-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-img-wrap img {
+    object-position: center 90%;
+  }
+}
+
+/* ── DARK MODE CONTRAST FIXES ── */
+
+/* Section labels */
+[data-theme="dark"] .section-label,
+:root .section-label {
+  color: var(--text-subtle);
+}
+
+/* Form labels */
+[data-theme="dark"] .form-group label,
+:root .form-group label {
+  color: var(--text-muted);
+}
+
+/* Skills block title */
+[data-theme="dark"] .skills-block-title,
+:root .skills-block-title {
+  color: var(--text-subtle);
+}
+
+/* Skill tags */
+[data-theme="dark"] .skill-tag,
+:root .skill-tag {
+  background: var(--bg3);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--text-muted);
+}
+
+/* Stack tags */
+[data-theme="dark"] .stack-tag,
+:root .stack-tag {
+  background: var(--bg3);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-subtle);
+}
+
+/* Project cards */
+[data-theme="dark"] .project-card,
+:root .project-card {
+  background: var(--bg2);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .project-desc,
+:root .project-desc {
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] .project-title,
+:root .project-title {
+  color: var(--text);
+}
+
+[data-theme="dark"] .project-link {
+  color: var(--text-muted);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] .project-link {
+  color: var(--text-muted);
+  border-color: rgba(0, 0, 0, 0.22);
+}
+
+/* Experience */
+[data-theme="dark"] .experience-block,
+:root .experience-block {
+  background: var(--bg2);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .exp-col li,
+:root .exp-col li {
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] .exp-note,
+:root .exp-note {
+  color: var(--text-muted);
+}
+
+/* Contact */
+[data-theme="dark"] .contact-form-wrap,
+:root .contact-form-wrap {
+  background: var(--bg2);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .contact-aside-card,
+:root .contact-aside-card {
+  background: var(--bg2);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .contact-link-item,
+:root .contact-link-item {
+  color: var(--text-muted);
+  border-color: rgba(255, 255, 255, 0.09);
+}
+
+[data-theme="dark"] .contact-link-icon,
+:root .contact-link-icon {
+  background: var(--bg3);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Footer */
+[data-theme="dark"] .footer-copy,
+:root .footer-copy {
+  color: var(--text-subtle);
+}
+
+/* Nav */
+[data-theme="dark"] .nav-links a,
+:root .nav-links a {
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] .mobile-menu a,
+:root .mobile-menu a {
+  color: var(--text-muted);
+}
+
+/* Form inputs */
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group textarea,
+[data-theme="dark"] .form-group select,
+:root .form-group input,
+:root .form-group textarea,
+:root .form-group select {
+  background: var(--bg3);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: var(--text);
+}
+
+[data-theme="dark"] .form-group input::placeholder,
+[data-theme="dark"] .form-group textarea::placeholder,
+:root .form-group input::placeholder,
+:root .form-group textarea::placeholder {
+  color: var(--text-subtle);
+}

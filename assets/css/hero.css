@@ -1,0 +1,271 @@
+/* ── HERO ── */
+.hero {
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 64px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(2rem, 6vw, 5rem) clamp(1.5rem, 4vw, 3rem)
+    clamp(2rem, 6vw, 4rem);
+  position: relative;
+  z-index: 1;
+}
+
+/* ── LIA BANNER (replaces old available-badge) ── */
+.lia-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem 0.5rem 0.75rem;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent-glow-strong);
+  border-radius: 999px;
+  margin-bottom: 1.75rem;
+  width: fit-content;
+  opacity: 0;
+  animation: slideUp 0.8s var(--ease) 0.05s both;
+  box-shadow: 0 0 24px var(--accent-glow);
+}
+
+.lia-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+.lia-text {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+}
+
+.lia-cta {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0a0a0a;
+  background: var(--accent);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-weight: 700;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+  white-space: nowrap;
+}
+
+.lia-cta:hover {
+  background: var(--accent-hover);
+  transform: scale(1.04);
+}
+
+[data-theme="light"] .lia-cta {
+  color: #fff;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0;
+  animation: slideUp 0.8s var(--ease) 0.1s both;
+}
+
+.hero-eyebrow::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.hero-name {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+  opacity: 0;
+  animation: slideUp 0.8s var(--ease) 0.2s both;
+}
+
+.hero-name em {
+  font-style: italic;
+  color: var(--accent);
+  display: block;
+}
+
+.hero-title {
+  font-family: var(--font-mono);
+  font-size: clamp(0.75rem, 1.5vw, 0.9375rem);
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  opacity: 0;
+  animation: slideUp 0.8s var(--ease) 0.3s both;
+}
+
+.hero-bio {
+  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 480px;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: slideUp 0.8s var(--ease) 0.4s both;
+}
+
+.hero-bio strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  opacity: 0;
+  animation: slideUp 0.8s var(--ease) 0.5s both;
+}
+
+/* ── HERO SOCIALS ── */
+.hero-socials {
+  margin-top: 2rem;
+  display: flex;
+  gap: 0.75rem;
+  opacity: 0;
+  animation: slideUp 0.8s var(--ease) 0.6s both;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: all 0.25s var(--ease-spring);
+}
+
+.social-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.social-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* ── HERO PHOTO ── */
+.hero-right {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg2);
+}
+
+.hero-img-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.hero-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%; /* fokuserar på ansiktet istället för toppen */
+  filter: grayscale(15%) contrast(1.05);
+  transition: transform 8s var(--ease);
+}
+.hero-img-wrap:hover img {
+  transform: scale(1.04);
+}
+
+.hero-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom right,
+    rgba(10, 10, 10, 0.3) 0%,
+    transparent 50%,
+    rgba(10, 10, 10, 0.4) 100%
+  );
+}
+
+.hero-img-tag {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 235, 0.7);
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+}
+
+/* ── SCROLL HINT ── */
+.scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: clamp(1.5rem, 4vw, 3rem);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  opacity: 0;
+  animation: fadeIn 1s var(--ease) 1s both;
+}
+
+.scroll-line {
+  width: 32px;
+  height: 1px;
+  background: var(--text-subtle);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-line::after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--accent);
+  animation: scrollSlide 2s var(--ease) infinite;
+}

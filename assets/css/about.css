@@ -1,0 +1,85 @@
+/* ── ABOUT ── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.about-text p {
+  color: var(--text-muted);
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+}
+
+.about-text p strong {
+  color: var(--text);
+  font-weight: 600;
+}
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── SKILLS BLOCK ── */
+.skills-block {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2rem;
+}
+
+.skills-block-title {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  margin-bottom: 1.5rem;
+}
+
+.skill-category {
+  margin-bottom: 1.75rem;
+}
+.skill-category:last-child {
+  margin-bottom: 0;
+}
+
+.skill-cat-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.skill-tag {
+  padding: 0.3rem 0.65rem;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  transition: all 0.2s;
+}
+
+.skill-tag:hover {
+  border-color: var(--border-accent);
+  color: var(--text);
+}
+
+/* Light mode */
+[data-theme="light"] .skills-block {
+  background: #ffffff;
+}
+[data-theme="light"] .skill-tag {
+  background: var(--bg2);
+}
