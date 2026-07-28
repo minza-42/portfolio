@@ -85,3 +85,37 @@ window.addEventListener(
   },
   { passive: true },
 );
+
+/* ── FORCE PDF DOWNLOAD FOR GITHUB PAGES ── */
+document.querySelectorAll("a[download]").forEach((link) => {
+  try {
+    const href = link.getAttribute("href");
+    if (!href || !href.toLowerCase().endsWith(".pdf")) return;
+
+    link.addEventListener("click", async (e) => {
+      // Let ctrl/cmd+click or modifier open in new tab normally
+      if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+      e.preventDefault();
+      try {
+        const resp = await fetch(href, { cache: "no-cache" });
+        if (!resp.ok) throw new Error("Network response was not ok");
+        const blob = await resp.blob();
+        const url = URL.createObjectURL(blob);
+        const filename = href.split("/").pop() || "download.pdf";
+        const a = document.createElement("a");
+        a.style.display = "none";
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        URL.revokeObjectURL(url);
+        a.remove();
+      } catch (err) {
+        // Fallback: navigate to href so browser handles it
+        window.location.href = href;
+      }
+    });
+  } catch (err) {
+    // ignore
+  }
+});
